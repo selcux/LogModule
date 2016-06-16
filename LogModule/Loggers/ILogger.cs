@@ -2,6 +2,9 @@
 
 namespace LogModule.Loggers
 {
+    /// <summary>
+    /// Logger interface
+    /// </summary>
     public interface ILogger
     {
         void Error(object message);

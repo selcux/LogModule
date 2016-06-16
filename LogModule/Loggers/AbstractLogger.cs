@@ -17,10 +17,13 @@ namespace LogModule.Loggers
         public abstract void Error(object message);
         public abstract void Debug(object message);
         public abstract void Info(object message);
+
         public abstract void AddActionBefore(LogType logType, Action handler);
         public abstract void RemoveActionBefore(LogType logType, Action handler);
+
         public abstract void AddActionAfter(LogType logType, Action handler);
         public abstract void RemoveActionAfter(LogType logType, Action handler);
+
         public abstract void ClearAllActions(LogType logType);
     }
 }
