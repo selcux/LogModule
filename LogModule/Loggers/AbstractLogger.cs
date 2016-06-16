@@ -10,7 +10,7 @@ namespace LogModule.Loggers
         {
             MethodBase callerMethodBase = new StackTrace().GetFrame(3).GetMethod();
             string callerMethod = callerMethodBase.Name;
-            string callerClass = callerMethodBase.ReflectedType.FullName;
+            string callerClass = callerMethodBase.ReflectedType?.FullName;
             return callerClass + "." + callerMethod;
         }
 
