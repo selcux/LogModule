@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8C6545D1-C419-4F28-A25F-50476DD62E45}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2FE78DA3-2CBB-4A7A-9250-6B69E894DE94}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogModule</RootNamespace>
-    <AssemblyName>LogModule</AssemblyName>
+    <RootNamespace>LogExample</RootNamespace>
+    <AssemblyName>LogExample</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,21 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILogEvent.cs" />
-    <Compile Include="LoggerFactory.cs" />
-    <Compile Include="Loggers\AbstractLogger.cs" />
-    <Compile Include="Loggers\ILogger.cs" />
-    <Compile Include="Loggers\TraceLogger\TraceLogger.cs" />
-    <Compile Include="LogType.cs" />
-    <Compile Include="LogTypes\AbstractLogType.cs" />
-    <Compile Include="LogTypes\DebugLogType.cs" />
-    <Compile Include="LogTypes\ErrorLogType.cs" />
-    <Compile Include="LogTypes\InfoLogType.cs" />
-    <Compile Include="Loggers\TraceLogger\Writers\DebugTraceWriter.cs" />
-    <Compile Include="Loggers\TraceLogger\Writers\ErrorTraceWriter.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ILogWriter.cs" />
-    <Compile Include="Loggers\TraceLogger\Writers\InfoTraceWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogModule\LogModule.csproj">
+      <Project>{8c6545d1-c419-4f28-a25f-50476dd62e45}</Project>
+      <Name>LogModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
